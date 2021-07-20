@@ -30,6 +30,20 @@ class Array
         arr
     end
 
+    def my_any?(&prc)
+        self.each do |ele|
+            return true if prc.call(ele)
+        end
+        return false
+    end
+
+    def my_all?(&prc)
+        self.each do |ele|
+            return false if prc.call(ele)
+        end
+        return true 
+    end
+
     
 
 end
